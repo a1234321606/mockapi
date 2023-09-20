@@ -1,0 +1,15 @@
+{
+  "prefix": "api",
+  "version": "v1",
+  "port": 3003,
+  "swagger": {
+    "urls": [
+      {
+        "url": "/api/docs/user/index.yaml",
+        "name": "User"
+      }
+    ],
+    "defaultModelsExpandDepth": "3",
+    "defaultModelExpandDepth": "3"
+  }
+}

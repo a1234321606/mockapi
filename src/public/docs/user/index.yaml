@@ -1,0 +1,59 @@
+openapi: 3.0.0
+info:
+  title: API Document
+  description: RESTful API for Users
+  version: v1
+tags:
+  - name: User
+paths:
+  /api/v1/users:
+    get:
+      description: Get user list
+      summary: API 1.1.1
+      tags:
+        - User
+      parameters:
+        - name: jobType
+          description: User's job type
+          in: path
+          schema:
+            type: string
+          example: RD
+        - name: createdFrom
+          description: The start time in ISO date format
+          in: path
+          schema:
+            type: string
+          example: "2023-09-19T16:00:00Z"
+        - name: createdTo
+          description: The end time in ISO date format
+          in: path
+          schema:
+            type: string
+          example: "2023-09-20T15:59:59Z"
+        - name: page
+          description: The page number starts from 1. (Default is 1)
+          in: path
+          schema:
+            type: number
+          example: 1
+        - name: pageSize
+          description: The page size in each page which should be larger than 0 . (Default is 10)
+          in: path
+          schema:
+            type: number
+          example: 10
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: schemas/user.yaml
+        400:
+          $ref: ../common/badRequest.yaml
+        500:
+          $ref: ../common/internalServerError.yaml
+    

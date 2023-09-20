@@ -1,0 +1,27 @@
+type: object
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  jobType:
+    type: string
+  createdAt:
+    type: string
+  city:
+    tpye: string
+  zipCode:
+    type: integer
+  address:
+    type: string
+  gender:
+    type: string
+example:
+  id: "1"
+  name: KH
+  jobType: RD
+  createdAt: "2023-09-19T16:25:25Z"
+  city: Taipei
+  zipCode: "116"
+  address: Roosevelt Rd.
+  gender: Male
